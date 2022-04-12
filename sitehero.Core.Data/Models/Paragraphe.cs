@@ -26,7 +26,10 @@ namespace sitehero.Core.Data.Models
         /// Description du paragraphe
         /// </summary>
         public string Description { get; set; }
-
+        /// <summary>
+        /// Ce sont les questions
+        /// </summary>
+        List<Question>? MesQuestions { get; set; }
         #endregion
 
 
