@@ -1,29 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using sitehero.Core.Data.Models;
 using sitehero.Models;
 
 namespace sitehero.Controllers
 {
     public class AventureController : Controller
     {
+        private readonly DefaultContext _context = null;
+        public AventureController(DefaultContext context)
+        {
+            this._context = context;
+        }
         public ActionResult Index()
         {
             ViewBag.Title = "Aventures";
 
-            List<Aventure> myArray = new List<Aventure>();
+            var query = from item in _context.Aventure
+                        select item;
 
-            myArray.Add(new Aventure
-            {
-                Id = 1,
-                Titre = "Ma première aventure",
-            });
-            
-            myArray.Add(new Aventure
-            {
-                Id = 1,
-                Titre = "Ma seconde aventure",
-            });
-            
-            return View(myArray);
+            return View(query.ToList());
         }
     }
 }

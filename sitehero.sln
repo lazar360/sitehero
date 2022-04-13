@@ -5,11 +5,15 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero", "sitehero\sitehero.csproj", "{61714971-48C4-4955-973C-C13107B7E3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sitehero.Core.Data", "sitehero.Core.Data\sitehero.Core.Data.csproj", "{1F286182-FFF9-42D1-87EA-F55274BAEF68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero.Core.Data", "sitehero.Core.Data\sitehero.Core.Data.csproj", "{1F286182-FFF9-42D1-87EA-F55274BAEF68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{EDE8C42D-9C2D-4165-B7E0-2A29433227EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sitehero.backoffice.Web.UI", "sitehero.BackOffice.Web.UI\sitehero.backoffice.Web.UI.csproj", "{3D722EA2-919D-4344-A204-9394F882D7D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero.backoffice.Web.UI", "sitehero.BackOffice.Web.UI\sitehero.backoffice.Web.UI.csproj", "{3D722EA2-919D-4344-A204-9394F882D7D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exemples", "Exemples", "{2AFF4B4F-9C85-4CF9-84BB-C3752A29D585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsEntities", "TestsEntities\TestsEntities.csproj", "{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +33,17 @@ Global
 		{3D722EA2-919D-4344-A204-9394F882D7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D722EA2-919D-4344-A204-9394F882D7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D722EA2-919D-4344-A204-9394F882D7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1F286182-FFF9-42D1-87EA-F55274BAEF68} = {EDE8C42D-9C2D-4165-B7E0-2A29433227EC}
+		{BE55E62A-1741-41B3-AE06-A41AE2F0DAFD} = {2AFF4B4F-9C85-4CF9-84BB-C3752A29D585}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84A6DDBF-65EA-4A8C-A560-E06F53BC89DD}

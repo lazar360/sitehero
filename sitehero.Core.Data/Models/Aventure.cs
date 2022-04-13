@@ -1,5 +1,8 @@
-﻿namespace sitehero.Core.Data
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace sitehero.Core.Data.Models
 {
+    [Table("Aventure")]
     public class Aventure
     {
         #region Propriétés
