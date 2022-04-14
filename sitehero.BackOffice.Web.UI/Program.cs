@@ -1,7 +1,17 @@
+using sitehero.Core.Data;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
+string connectionString = builder.Configuration.GetConnectionString("DefaultContext");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DefaultContext>(options =>
+    options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
 
 var app = builder.Build();
 

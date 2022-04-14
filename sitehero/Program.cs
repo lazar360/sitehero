@@ -11,7 +11,7 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultCont
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DefaultContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
 
 var app = builder.Build();
 

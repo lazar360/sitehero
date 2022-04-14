@@ -5,13 +5,15 @@ namespace sitehero.backoffice.Web.UI.Controllers
 {
     public class ParagrapheController : Controller
     {
-        #region A supprimer après entitities
-        private List<Paragraphe> _maListe = new List<Paragraphe>()
+        #region Champs privés
+        private DefaultContext _context = null;
+        #endregion
+
+        #region Constructeurs
+        public ParagrapheController(DefaultContext context)
         {
-            new Paragraphe() { Id = 1, Numero = 1, Titre = "Titre 1"},
-            new Paragraphe() { Id = 2, Numero = 10, Titre = "Titre 2"},
-            new Paragraphe() { Id = 5, Numero = 14, Titre = "Titre 3"}
-        };
+            this._context = context;
+        }
         #endregion
 
         #region Méthodes publiques
@@ -27,17 +29,29 @@ namespace sitehero.backoffice.Web.UI.Controllers
         [HttpPost]
         public ActionResult Create(Paragraphe paragraphe)
         {
+            this._context.Paragraphe.Add(paragraphe);
+            this._context.SaveChanges();
             return View();
         }
 
         public ActionResult Edit(int id)
         {
-            Paragraphe paragraphe = null;
-            
-            paragraphe = _maListe.First(p => p.Id == id);
+            Paragraphe paragraphe = this._context.Paragraphe.First(item => item.Id == id);
 
             return View(paragraphe);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Paragraphe paragraphe)
+        {
+            this._context.Attach<Paragraphe>(paragraphe);
+            //this._context.Entry(paragraphe).Property(item => item.Titre).IsModified = true;
+            this._context.Paragraphe.Update(paragraphe);
+            this._context.SaveChanges();
+
+            return View(paragraphe);
+        }
+
         #endregion
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,8 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// Ce sont les questions
         /// </summary>
-        List<Question>? MesQuestions { get; set; }
+        [NotMapped]
+        public Question MaQuestion { get; set; }
         #endregion
 
 
