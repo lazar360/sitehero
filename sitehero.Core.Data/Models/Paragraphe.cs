@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace sitehero.Core.Data.Models
 {
-        public class Paragraphe
+    [Table("Paragraphe")]
+    public class Paragraphe
     {
         #region Propriétés
         /// <summary>
         /// Id venant de la base
         /// </summary>
+        [Key]
         public int Id { get; set; }
         /// <summary>
         /// Numéro à afficher pour le jeu
@@ -30,7 +33,6 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// Ce sont les questions
         /// </summary>
-        [NotMapped]
         public Question MaQuestion { get; set; }
         #endregion
 

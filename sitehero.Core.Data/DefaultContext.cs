@@ -15,7 +15,8 @@ public class DefaultContext : Microsoft.EntityFrameworkCore.DbContext
         #region Propriétés
         public Microsoft.EntityFrameworkCore.DbSet<Aventure> Aventure {get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Paragraphe> Paragraphe{get; set; }
-    
-        #endregion
+        public Microsoft.EntityFrameworkCore.DbSet<Question> Question { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Reponse> Reponse { get; set; }
+    #endregion
 }
 
