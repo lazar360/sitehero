@@ -33,6 +33,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "mesaventures",
+    pattern: "mes-aventures",
+    defaults: new { controller = "Aventure", action = "Index" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
