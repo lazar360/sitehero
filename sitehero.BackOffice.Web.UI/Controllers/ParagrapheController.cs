@@ -17,8 +17,9 @@ namespace sitehero.backoffice.Web.UI.Controllers
         #endregion
 
         #region Méthodes publiques
-        public ActionResult Index() {
-            
+        public ActionResult Index()
+        {
+
             return View();
         }
         public ActionResult Create()
@@ -29,9 +30,15 @@ namespace sitehero.backoffice.Web.UI.Controllers
         [HttpPost]
         public ActionResult Create(Paragraphe paragraphe)
         {
-            this._context.Paragraphe.Add(paragraphe);
-            this._context.SaveChanges();
-            return View();
+            if (ModelState.IsValid)
+            {
+                this._context.Paragraphe.Add(paragraphe);
+                this._context.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+
+            return View(paragraphe);
         }
 
         public ActionResult Edit(int id)
@@ -44,14 +51,16 @@ namespace sitehero.backoffice.Web.UI.Controllers
         [HttpPost]
         public ActionResult Edit(Paragraphe paragraphe)
         {
-            this._context.Attach<Paragraphe>(paragraphe);
-            //this._context.Entry(paragraphe).Property(item => item.Titre).IsModified = true;
-            this._context.Paragraphe.Update(paragraphe);
-            this._context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                this._context.Attach<Paragraphe>(paragraphe);
+                this._context.Paragraphe.Update(paragraphe);
+                this._context.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
             return View(paragraphe);
         }
-
         #endregion
 
     }

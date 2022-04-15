@@ -11,6 +11,7 @@ namespace sitehero.Core.Data.Models
     [Table("Paragraphe")]
     public class Paragraphe
     {
+        
         #region Propriétés
         /// <summary>
         /// Id venant de la base
@@ -20,20 +21,24 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// Numéro à afficher pour le jeu
         /// </summary>
+        [Range(1, 500, ErrorMessage = "Le numéro doit être compris entre 1 et 500")]
         public int Numero { get; set; }
 
         /// <summary>
         ///  C'est le titre du paragraphe
         /// </summary>
-        public string Titre { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre est obligatoire")]
+        public string? Titre { get; set; } = "Titre par défaut";
+
         /// <summary>
         /// Description du paragraphe
         /// </summary>
-        public string Description { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La description est obligatoire")]
+        public string? Description { get; set; } = "Description par défaut";
         /// <summary>
         /// Ce sont les questions
         /// </summary>
-        public Question MaQuestion { get; set; }
+        public Question? MaQuestion { get; set; }
         #endregion
 
 
