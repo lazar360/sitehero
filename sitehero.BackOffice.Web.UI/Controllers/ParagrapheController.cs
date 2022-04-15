@@ -6,7 +6,7 @@ namespace sitehero.backoffice.Web.UI.Controllers
     public class ParagrapheController : Controller
     {
         #region Champs privés
-        private DefaultContext _context = null;
+        private DefaultContext _context;
         #endregion
 
         #region Constructeurs

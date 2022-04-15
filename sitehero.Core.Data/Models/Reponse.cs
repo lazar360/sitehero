@@ -20,7 +20,8 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// Proposition de réponse
         /// </summary>
-        public string Description { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La descripion est obligatoire")]
+        public string? Description { get; set; } = "description par défaut";
 
         public int QuestionId { get; set; }
 

@@ -20,14 +20,15 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// Titre de la question
         /// </summary>
-        public string Titre { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre est obligatoire")]
+        public string? Titre { get; set; } = "Titre par défaut";
 
         public int ParagrapheId { get; set; }
 
         /// <summary>
         /// Liste des réponses possibles à la question
         /// </summary>
-        public List<Reponse> MesReponses { get; set; }
+        public List<Reponse>? MesReponses { get; set; }
         #endregion
 
     }
