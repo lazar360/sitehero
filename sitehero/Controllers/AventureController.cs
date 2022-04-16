@@ -43,9 +43,16 @@ namespace sitehero.Controllers
             return View(aventure);
         }
 
-        public ActionResult BeginNewOne()
-        {            
-            return View(this._paragrapheLayer.GetFirst());
+        public ActionResult BeginNewOne(int id)
+        {
+            Paragraphe item;
+            
+            if (id == 0)
+                item = this._paragrapheLayer.GetFirst();
+            else
+                item = this._paragrapheLayer.GetOne(id);
+
+            return View(item);
         }
 
         public ActionResult Edit(int id)

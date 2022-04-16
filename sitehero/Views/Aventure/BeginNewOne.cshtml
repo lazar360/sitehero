@@ -15,19 +15,23 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col text-center">
-        <p>
-            @Model.MaQuestion.Titre
-        </p>
-
-        <ul>
-            @foreach (var reponse in Model.MaQuestion.MesReponses)
+@if (Model.MaQuestion != null)
+{
+    <div class="row">
+        <div class="col text-center">
+            <p>
+                @Model.MaQuestion.Titre
+            </p>
+            @if (Model.MaQuestion.MesReponses !=null && Model.MaQuestion.MesReponses.Count > 0)
             {
-                <li>@reponse.Description</li>
-            }
-        </ul>
+             <ul>
+                @foreach (var reponse in Model.MaQuestion.MesReponses)
+                {
+                    <li><a asp-controller="Aventure" asp-action="BeginNewOne" asp-route-id="@reponse.ParagrapheId"> @reponse.Description</a></li>
+                }
+            </ul>   
+            }    
+        </div>
     </div>
-</div>
-
+}
 
