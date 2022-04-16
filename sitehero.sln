@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero", "sitehero\sitehero.csproj", "{61714971-48C4-4955-973C-C13107B7E3DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero.Web.UI", "sitehero\sitehero.Web.UI.csproj", "{61714971-48C4-4955-973C-C13107B7E3DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sitehero.Core.Data", "sitehero.Core.Data\sitehero.Core.Data.csproj", "{1F286182-FFF9-42D1-87EA-F55274BAEF68}"
 EndProject
@@ -17,7 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsEntities", "TestsEntit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentification", "Authentification", "{E15FD9F2-911C-473C-BBFB-A2C87DDEB870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAuthentification", "TestAuthentification\TestAuthentification.csproj", "{79940CCB-7433-4ACC-B6AC-77AEC86DA541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuthentification", "TestAuthentification\TestAuthentification.csproj", "{79940CCB-7433-4ACC-B6AC-77AEC86DA541}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64ED92EF-C60A-4E16-A624-91DB635D853D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

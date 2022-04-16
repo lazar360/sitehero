@@ -1,0 +1,33 @@
+﻿@model sitehero.Core.Data.Models.Paragraphe
+
+@{
+    ViewData["Title"] = "C'est parti";
+
+}
+<h2>C'est parti !</h2>
+
+<div class="row">
+    <div class="col text-center">
+        <h1>@Model.Titre</h1>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <p>
+            @Model.MaQuestion.Titre
+        </p>
+
+        <ul>
+            @foreach (var reponse in Model.MaQuestion.MesReponses)
+            {
+                <li>@reponse.Description</li>
+            }
+        </ul>
+    </div>
+</div>
+
+

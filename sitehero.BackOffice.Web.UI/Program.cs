@@ -1,9 +1,4 @@
-using sitehero.Core.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("DefaultContext");
@@ -29,6 +24,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "editparagraph",
+    pattern: "edit-paragraph/{id}",
+    defaults: new { controller = "Paragraphe", action = "Edit" },
+    constraints: new { id = @"\d+" }
+    );
 
 app.MapControllerRoute(
     name: "default",

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace sitehero.Core.Data.Models
 {
@@ -13,6 +14,7 @@ namespace sitehero.Core.Data.Models
         /// <summary>
         /// C'est le titre de l'aventure
         /// </summary>
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre est obligatoire")]
         public string Titre{ get; set; }
         #endregion
          

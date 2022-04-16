@@ -35,10 +35,22 @@ namespace sitehero.Core.Data.Models
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "La description est obligatoire")]
         public string? Description { get; set; } = "Description par défaut";
+
+        /// <summary>
+        /// Indique si c'est le paragraphe de démarrage
+        /// <summary>
+        public bool EstInitial { get; set; }
+
+
         /// <summary>
         /// Ce sont les questions
         /// </summary>
         public Question? MaQuestion { get; set; }
+
+        /// <summary>
+        /// Liste des réponses possibles
+        /// </summary>
+        public IEnumerable<Reponse> Reponses { get; set; }
         #endregion
 
 

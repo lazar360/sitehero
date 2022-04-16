@@ -23,7 +23,15 @@ namespace sitehero.Core.Data.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "La descripion est obligatoire")]
         public string? Description { get; set; } = "description par défaut";
 
+        /// <summary>
+        /// Id de la question
+        /// </summary>
         public int QuestionId { get; set; }
+
+        /// <summary>
+        /// Id du paragraphe suivant
+        /// </summary>
+        public int? ParagrapheId { get; set; }
 
         /// <summary>
         /// Liste des réponses possibles

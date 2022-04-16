@@ -4,14 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using sitehero.Core.Data.DataLayer;
 
 var builder = WebApplication.CreateBuilder(args);
+
 string connectionString = builder.Configuration.GetConnectionString("DefaultContext");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<ParagrapheDataLayer, ParagrapheDataLayer>();
+
 builder.Services.AddDbContext<DefaultContext>(options =>
     options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
+
+builder.Services.AddSession(options => {
+    options.Cookie.Name = ".sitehero.session";
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+});
 
 var app = builder.Build();
 
@@ -31,6 +41,19 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
+
+app.MapControllerRoute(
+    name: "aventure-creation",
+    pattern: "demarrer-une-nouvelle-aventure",
+    defaults: new { controller = "Aventure", action = "Create" });
+
+app.MapControllerRoute(
+    name: "aventure-edition",
+    pattern: "continuer-une-aventure/{id}",
+    defaults: new { controller = "Aventure", action = "Edit" },
+    constraints: new { id = @"\d+" });
 
 app.MapControllerRoute(
     name: "mesaventures",

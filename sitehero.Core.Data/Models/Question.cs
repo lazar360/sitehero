@@ -23,6 +23,9 @@ namespace sitehero.Core.Data.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre est obligatoire")]
         public string? Titre { get; set; } = "Titre par défaut";
 
+        /// <summary>
+        /// Id du paragraphe
+        /// </summary>
         public int ParagrapheId { get; set; }
 
         /// <summary>
