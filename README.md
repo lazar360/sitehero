@@ -1,5 +1,3 @@
-# sitehero
-
 <h1>Site Hero</h1>
     <h2>Table of contents</h2>
     <ul>
