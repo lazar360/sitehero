@@ -13,7 +13,7 @@ A website using ASP.NET 6, razor and mysql.
 
 <h2>Demo</h2>
 
-![demogit](https://user-images.githubusercontent.com/91179295/155420074-b6d2ba95-d9ca-451e-a4f2-457734e85267.gif)
+![sitehero](https://user-images.githubusercontent.com/91179295/163849984-cfc6de28-c56f-4506-8ba6-77d693baff3f.gif)
 
 <h2>Features</h2>
 
