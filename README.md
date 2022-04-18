@@ -21,7 +21,7 @@ With this site, you're the hero of the history.
 Users can do the following :
 <ul>
     <li>Create an adventure</li>
-    <li>Save it</li>
+    <li>Save your adventure</li>
     <li>Choose between different alternatives</li>
     <li>Finally, become a real Jedi.</li>
     <li>May the force be with you !</li>
