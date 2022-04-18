@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Accueil";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Site Héro - Home Page</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row text-center">
+    <div class="col-md-12">
+        <div class="card">
+            <img class="card-img-top" src="~/images/home.png" alt="jedi in arm">
+            <div class="card-body">
+                <h5 class="card-title">Bienvenue sur Jedi vs Emperor</h5>
+                <p class="card-text">
+                    Vous pouvez accéder à la liste des aventures disponibles en cliquant sur le bouton ci-dessous.
+                </p>
+                <a href="@Url.Action("Create", "Aventure")" class="btn btn-primary">Appuyez pour continuer</a>
+            </div>
+        </div>
+    </div>
 </div>
+

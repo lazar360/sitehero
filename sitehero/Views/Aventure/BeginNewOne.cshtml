@@ -4,34 +4,40 @@
     ViewData["Title"] = "C'est parti";
 
 }
-<h2>C'est parti !</h2>
 
-<div class="row">
-    <div class="col text-center">
-        <h1>@Model.Titre</h1>
-        <p>
-            @Model.Description
-        </p>
-    </div>
-</div>
+<div class="row text-center">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
 
-@if (Model.MaQuestion != null)
-{
-    <div class="row">
-        <div class="col text-center">
-            <p>
-                @Model.MaQuestion.Titre
-            </p>
-            @if (Model.MaQuestion.MesReponses !=null && Model.MaQuestion.MesReponses.Count > 0)
-            {
-             <ul>
-                @foreach (var reponse in Model.MaQuestion.MesReponses)
+                @if (Model.Image != null)
                 {
-                    <li><a asp-controller="Aventure" asp-action="BeginNewOne" asp-route-id="@reponse.ParagrapheId"> @reponse.Description</a></li>
+                    <img src="@Model.Image" alt="@Model.Titre" class="img-thumbnail">
                 }
-            </ul>   
-            }    
+                <h3 class="card-title">@Model.Titre</h3>
+                <p class="card-text">
+                    @Model.Description
+                </p>
+
+                @if (Model.MaQuestion != null)
+                {
+                    <div class="card-text">
+                        <p>
+                            @Model.MaQuestion.Titre
+                        </p>
+                        @if (Model.MaQuestion.MesReponses != null && Model.MaQuestion.MesReponses.Count > 0)
+                        {
+                            <ul style="list-style:none">
+                                @foreach (var reponse in Model.MaQuestion.MesReponses)
+                                {
+                                    <li><a asp-controller="Aventure" asp-action="BeginNewOne" asp-route-id="@reponse.ParagrapheId"> @reponse.Description</a></li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                }
+            </div>
         </div>
     </div>
-}
+</div>
 

@@ -51,6 +51,8 @@ namespace sitehero.Core.Data.Models
         /// Liste des réponses possibles
         /// </summary>
         public IEnumerable<Reponse> Reponses { get; set; }
+
+        public string? Image { get; set; }
         #endregion
 
 
