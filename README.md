@@ -30,5 +30,6 @@ Users can do the following :
 <ul>
     <li>C#</li>
     <li>ASP.NET 6</li>
+    <li>Microsoft SQL Server</li>
     <li>Bootsrap 5.1.3</li>
 </ul>
